@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证码</title>
+</head>
+<body>
+    <script>
+      function numtestcode(n){
+            var arr=[];
+            for(var i=0;i<n;i++){
+               var num=parseInt(Math.random()*10);
+               arr.push(num); 
+            }
+            return arr.join("");
+           }
+            
+     
+       //alert(numtestcode(6));
+          function testcode(n){ 
+            var arr=[];
+            for(var i=0;i<n;i++){
+               var num=parseInt(Math.random()*123);
+            if(num>=0 && num<=9){
+               arr.push(num);
+            }else if(num>=97 && num<122 || num>=65 && num<=90){
+               arr.push(String.fromCharCode(num));
+            }else{
+                i--;
+            }
+          }
+            return arr.join("");
+          }
+          alert(testcode(6));
+    </script>
+</body>
+</html>

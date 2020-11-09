@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+    /*面向过程的思想
+      面向对象的思想
+
+      面向过程：只考虑数学逻辑；
+      面向对象：
+      分析有哪些实体；
+      实体的属性和功能；
+      实体间的相互作用；
+    */
+     var car={
+         speed:60,
+
+         run: function(road){
+         return road.length/car.speed;
+         }
+     };
+     var kuhaidaqiao={
+        length:1000,
+     };
+     var hour=car.run(kuhaidaqiao)
+     alert("一共花了"+hour.toFixed(2)+"小时");
+     </script>
+</body>
+</html>

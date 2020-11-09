@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>滑动条</title>
+        <style>
+        #slipd{
+            position: relative;width: 600px;height: 30px;border:1px solid black;margin: 100px auto;
+        }    
+         #full{
+             width: 0px;height: 30px;background-color: orangered;position: absolute;top: 0;left:0;
+         }
+         #slip{
+             width: 30px;height: 30px;background-color: blue;position: absolute;left: 0px;
+         }
+        </style>
+    </head>
+    <body>
+    <div id="slipd">
+        <div id='full'></div>
+        <div id="slip"></div>
+    </div>
+    <script>
+      window.onload=function(){
+        var oslipd=document.getElementById("slipd")
+        var ofull=document.getElementById("full");
+        var oslip=document.getElementById("slip");
+            
+        if(!window.localStorage){
+                  alert("wulocalStorage");
+              }else{
+                var l =localStorage.getItem("slipe") ?localStorage.getItem("slipe"):0;
+                  oslip.style.left=l+'px';
+                  ofull.style.width=l+'px';
+              }
+      
+          oslip.onmousedown=function(ev){
+              var e =ev||window.event;
+              var offsetX=e.clientX-oslip.offsetLeft;
+
+            document.onmousemove=function(ev){
+              var e=ev||window.event;
+              var l=e.clientX-offsetX;
+              if(l<=0){
+                 l=0;
+              }
+              if(l>=570){
+                  l=570;
+              }
+             
+              oslip.style.left=l+'px';
+              ofull.style.width=l+'px';
+              if(!window.localStorage){
+                  alert("wulocalStorage");
+              }else{
+                  localStorage.setItem("slipe",l)
+              }
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null;
+            }
+          }
+      }
+
+
+    </script>
+    </body>
+</html>

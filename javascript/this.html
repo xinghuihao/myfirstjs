@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //  var person={
+    //    username:"蜘蛛侠",
+    //    sex:"男",
+    //    show:function(){
+    //        alert(person.username);
+    //        alert(this.username);
+    //    }
+    //  };
+    // person.show();
+       
+    // function show(){
+    //     alert(this);
+    // }
+    
+   
+
+     function show(){
+         alert(this);
+     }
+
+     /*
+      强制转换this指向；
+       函数名.call()
+       第一个参数：传入该函数this指向的对象 强制转换；
+       第二个开始：将原来的参数后延一位；
+
+       函数.apply()
+        第一个参数：传入this的指向对像，传入什么强制转换什么；
+        第二个函数：数组 数组，放入我们原有的参数
+     */
+        
+      /*
+      函数.bind();  预设this指向；
+      第一参
+      */
+       window.onload=function(){
+           var btn=document.getElementById("box");
+        //    btn.onclick=function(){
+        //        show.call('call');
+        //    }
+            // btn.onclick=function(){
+            //    show.apply('apply');
+            // }
+          btn.onclick=show.bind("bind");
+       }
+          
+
+          var arr=[10,20,30,40,50];
+          alert(Math.min.apply(null,arr));
+          alert(Math.max.apply(null,arr));
+    </script>
+    <button id="box">按钮</button>
+
+
+</body>
+</html>

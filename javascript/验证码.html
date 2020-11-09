@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="first.js"></script>
+
+    <style>
+    #oDv{
+        width:100px;
+        height: 30px;
+        text-align: center;
+        border: 1px solid black;
+        line-height: 30px;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+    <div id="oDv">000000</div>
+    <button onclick="btn();">获取验证码</button>
+
+
+
+
+    <div id="div">123456</div>
+     <button onclick="btn1()">验证码</button>
+    <script>
+        var odv=document.getElementById("oDv");
+         console.log(odv);
+         function btn(){
+            odv.innerHTML=testcode(6);
+        }
+        var ton=document.getElementById("div");
+        console.log(ton);
+        function btn1(){
+            ton.innerHTML=numtestcode(6);
+        }
+    </script> 
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+        // function add(num1,operator,num2){
+        //    switch (operator) {
+        //          case "+":
+        //            return num1+num2;
+        //            break;
+        //            case "-":
+        //            return num1-num2;
+        //            break;
+        //            case "*":
+        //            return num1*num2;
+        //            break;
+        //            case "/":
+        //            return num1/num2;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        // }
+        // var res =add(5,"+",6);
+        //   alert(res);
+           
+          function sum(n){
+            var res=0;
+               if(n % 2==0){
+                 for(var i=2;i<=n;i+=2){
+                     res += 1/i;
+                 }
+               }else{
+                   for(var i=1;i<=n;i+=2){
+                       res += 1/i;
+                   }
+               }
+               return res;
+          }
+          alert(sum(4));
+</script>
+</body>
+</html>

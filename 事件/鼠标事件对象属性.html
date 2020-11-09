@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height: 3000px;">
+    
+<button>按钮</button>
+
+
+    <script>
+        /*
+        button：属性；
+          0：左键
+          1；滚轮
+          2：右键
+
+        */
+          
+
+        /*
+        获取当前的鼠标的位置；
+        clientX  clientY:可视窗口的左上角
+        pagex pagey：  左上角：包括滚出的那部分
+        screenX screenY：整个屏幕的左上角；
+        */
+
+     document.onmousedown=function show(ev){
+       var e=ev||window.event;
+       //alert(e.button);
+
+       //alert(e.clientX+","+e.clientY);
+        alert(e.pageX+","+e.pageY);
+        alert(e.screenX+","+e.screenY);
+  }
+  
+
+    </script>
+</body>
+</html>

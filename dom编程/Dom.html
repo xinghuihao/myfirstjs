@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="oli">
+        <li>111</li>
+        <li id="box">111</li>
+        <li>111</li>
+        <li id="box">111</li>
+        <li>111</li>
+        <li>111</li>
+    </ul>
+
+    <ol>
+        <li>111</li>
+        <li id="box">111</li>
+        <li>111</li>
+        <li id="box">111</li>
+    </ol>
+    <script>
+      /*document.getElementById();
+
+        node.getElementsByTagName("标签名"); 
+        node.getElementsByClassName("class名字")
+        
+        document.getElementsByName("name名字");
+        
+
+
+
+        document.querySelector();
+        返回值： 元素节点，每一个节点的第一元素
+
+        document.querySelectorAll()；
+        返回值：一个伪数组
+
+        参数：字符串：css选择器
+      */
+       
+      
+      window.onload=function (){
+       var alio= document.getElementsByTagName("li");
+         for(var i=0;i<alio.length;i++){
+             alio[i].style.backgroundColor='red';
+         }
+          var que =document.querySelector("ol li")
+              que.style.backgroundColor="blue";
+          var query=document.querySelectorAll("ol #box")
+              for(var i=0;i<=query.length;i++){
+              query[i].style.background="orange"    ;   
+        }
+      }
+
+      
+
+    </script>
+</body>
+</html>

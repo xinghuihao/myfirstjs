@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>正则表达式</title>
+    </head>
+    <body>
+        <script>
+        /*
+        正则表达式：
+         第一个参数：正则表达式的主体(字符串)
+         第二次参数：修饰符；
+        
+        */
+
+        var box1=new RegExp("hello","ig");
+        alert(box1);
+
+         /*
+         正则表达式的方法
+         test
+         格式: 正则.test
+         功能：从字符中匹配受否存在；
+         返回值：正确返回true，错误返回false；
+         exec
+         格式：正则.exec
+         功能：在字符串中是否匹配的字符串
+         返回值：正确的返回 返回一个数组；
+                 错误返回null；
+         */
+          var str ="how are Are aRe arE you"
+          var box2=/are/i;
+          //alert(box2.test(str));
+
+          alert(box2.exec(str));
+
+        /*
+        字符串中的函数；
+        match：
+         格式；字符串.match
+         功能：在字符中匹配是否有相同字符串
+         返回值：匹配成功；返回一个匹配的数组；
+                匹配失败；返回null
+        replace:
+          格式：字符串.replace(oldstr,newstr);
+          功能：把旧的字符换成新的字符串；
+          返回值：替换新的字符串
+        split:
+          格式：字符串.split(分割正则);
+          功能：用分割符把原来的字符串分割；
+          返回值：分割下来的子串合成一个数组；
+        search:
+        格式：字符串.search(字符串/正则);
+        功能：找到符合条件的第一个位置
+        返回值：如果找到显示下标
+               否则：显示-1；
+        */
+        var box3=/are/ig;
+        //alert(str.match(box3));
+
+        var newstr=str.replace(/are/ig,'*');
+        alert(newstr);
+        
+        var box4=str.split(/are/i);
+        alert(box4);
+
+        var box5=str.search('are');
+        alert(box5);
+        </script>
+    </body>
+</html>

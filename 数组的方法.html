@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历数组</title>
+</head>
+<body>
+    <script>
+//   var arr=[10,20,30,40,50];
+//     // for(var i=0;i<arr.length;i++){
+//     //       document.write(arr[i]+"&nbsp");
+//     // }
+//         for(var i in arr){
+//             document.write(arr[i] + "&nbsp");
+//         }
+
+
+    //  var arr=["北京","上海","天津"];
+    //  var res =arr.push("成都","杭州","南京");
+   
+    //  alert (arr);
+    //  alert (res);
+
+     //var arr2=["唐朝","宋朝","明朝"]
+     //var res=arr2.pop();
+    //  alert(arr2);
+    //  alert(res);
+
+    //  var arr =["唐朝","宋朝","明朝"]
+    //  var res1=arr.unshift("汉朝","秦朝");
+    //  alert(arr);
+    //  alert(res1);
+   
+     //队列结构
+     //从末尾进
+     //从头部出
+    // var arr1=["唐朝","宋朝","明朝"]
+    //  var res2=arr1.shift();//
+    //  alert(arr1);
+    //  alert(res2);
+
+     //数组的方法
+      // concat 拷贝原数组，合并新数组
+    // var arr3=["lol","cf"];
+    // var newarr=arr1.concat("hello",arr3);
+    // alert(newarr);
+    // alert(newarr.length);
+    // alert(arr3);
+
+   // var arr = [10,20,30,40,50]
+   // var res = arr.slice(1,4); slice:截取数中的字符
+//    var res =arr.splice(2,0,"hello","world"); //
+    // splice:增加 删除 修改  返回值为截取下来元素作为返回值。
+    //    var res =arr.splice(1,0,"hello")//("hello","world");   删除
+    //    alert(res);
+    // alert(arr);
+    //第一个值为插入点，第二值为扣去第二值的数值；res:表示扣取的元素 arr表示新数组的值 。
+
+  //join ：增添
+  //reverse :逆序
+   //sort  : 数组排序；
+   //数值大小排序  
+    var arr =[1,10,14,20,6,9]
+    arr.sort(function (value1,value2){
+        return value1-value2;
+    })
+    alert(arr);
+
+    </script>
+</body>
+</html>

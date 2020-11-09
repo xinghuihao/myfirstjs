@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      /*
+        for();循环
+        for in;
+        forEach();
+      */
+
+      var arr=[10,20,30,40,50]
+      for(var i=0;i<arr.length;i++){
+          document.write(i+","+arr[i]+"<br/>");
+      }
+      for(var i in arr){
+          document.write(i+","+arr[i]+"<br/>")
+      }
+       arr.forEach(function(item,index,arr){
+           document.write(""+item+","+index+"<br>");
+       });
+    
+      //对象遍历
+       var person={
+          username:"蜘蛛侠",
+          sex:"男",
+          age:18
+          }
+          for (var i in person){
+              document.write(i+","+person[i]+"<br/>");
+          }
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>选择排序</title>
+    </head>
+<body>
+    <script>
+        //  var arr=[9,8,7,6,5,4,3,2]
+        // for(i=0;i<arr.length-1;i++){
+        //     for(j=i+1;j<arr.length;j++){
+        //           var tmp=arr[i];
+        //            arr[i]=arr[j];
+        //            arr[j]=tmp; 
+        //     }
+
+        // }
+        //          alert(arr);
+            
+        //  function countNum(num){
+        //         var arr=[];
+        //         while(num){
+        //             arr.push(num%10);
+        //             num=parseInt(num/10);
+        //         }
+        //         arr.reverse();
+        //      alert("一共有" +arr.length+"位"+","+"每位是"+arr); 
+        //  }
+        //  countNum(12345);  
+
+        //   function has(arr,item){
+        //       for(i=0;i<arr.length;i++){
+        //           if(arr[i] === item){
+        //             return true;
+        //           }
+        //       }
+        //       return false;
+        //   }
+        //   alert(has([10,20,30],10));
+             
+      var ens=ens13(690123456789);
+        alert(ens);
+           function ens13(num){
+               var arr=[];
+               while(num){
+               arr.unshift(num%10);
+               num=parseInt(num/10);
+           }
+           alert(arr);
+            var odd=0;
+            var even=0;
+            for(var i=0; i<arr.length;i++){
+            if(i%2==0){
+              odd +=arr[i];
+            }else{
+              even +=arr[i];
+            }
+            }
+            alert(even);
+           var sum = (odd+even*3)%10;
+          
+           if (sum){
+              sum = 10 -sum;
+           }
+             arr.push(sum);
+             
+            return Number(arr.join(""));
+           }
+          
+    </script>
+</body>
+</html>

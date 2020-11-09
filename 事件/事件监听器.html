@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件监听器</title>
+</head>
+<body>
+    <button id="btn1">添加</button>
+    <button id="btn2">按钮</button>
+    <button id="btn3">删除</button>
+    <script>
+       /*
+       事件监听器；
+       addEventListener:
+       第一个参数：事件类型
+       第二个参数；绑定函数
+       第三个参数；布尔值   true：事件捕获
+                           false：事件冒泡；
+       */
+       var abtn=document.getElementsByTagName('button');
+        abtn[1].addEventListener("click",function(){
+                  alert("原有的函数");
+        },false);
+
+        abtn[0].onclick=function(){
+        abtn[1].addEventListener("click",show,false);
+        }
+        abtn[2].onclick=function(){
+          abtn[1].removeEventListener("click",show);  
+        }
+        function show(){
+            alert("hello");
+        }
+    </script>
+</body>
+</html>

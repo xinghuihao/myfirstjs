@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <script>
+     /*
+     target:
+     注：由谁而起
+     iE8以下不兼容 window.event.srcElement;
+     */
+      window.onload=function(){
+          var oul=document.getElementById('box');
+          var oli=document.getElementById('li1')
+          oli.onclick=function(ev){
+             var e=ev||window.event;
+             var target=e.target||e.window.event.Element;
+             alert(target.innerHTML);
+          }
+      }
+
+
+    </script>
+    <ul id="box">
+        <li id="li1">111</li>
+        <li>111</li>
+        <li>111</li>
+    </ul>
+</body>
+</html>

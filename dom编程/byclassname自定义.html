@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义</title>
+</head>
+<body>
+    <ul id="oli">
+        <li>111</li>
+        <li id="box">11</li>
+        <li>11</li>
+        <li>11</li>
+        <li>11</li>
+    </ul>
+    <ol id="uli">
+        <li>111</li>
+        <li class="box">11</li>
+        <li>111</li>
+        <li class="box">11</li>
+    </ol>
+    <script>
+       
+    
+    function elementByclassName(node,classstr){
+        var nodes=node.getElementsByTagName("*");
+        var arr=[];
+        for(var i=0;i<nodes.length;i++){
+            if(nodes[i].className===classstr){
+                arr.push(nodes[i]);
+            }
+        }
+        return arr;
+    }
+    window.onload=function(){
+        var ali=document.getElementById("uli");
+        var nodes=elementByclassName(ali,"box");
+        for(var i=0;i<nodes.length;i++){
+            nodes[i].style.backgroundColor="red";
+        }
+
+    }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+       function reverseStr(str){
+             var arr=str.split(" ");
+             arr.reverse();
+             return arr.join(" "); 
+    }
+           alert(reverseStr("Welcome to Beijing"));
+
+
+           function symetry(arr){
+               var newArr=arr.concat();
+               for(var i=arr.length-1;i>=0;i--){
+                  newArr.push(arr[i]);
+               }
+               return newArr;
+            }
+           alert(symetry(["one","two","three"]));
+
+            function countofword(str){
+                var count=0;
+                for(var i=0;i<str.length-1;i++){
+                  if(isABC(str[i]) && !isABC(str[i +1])){
+                      count++;
+                  }
+                }
+                return count;
+            }
+            alert(countofword("yes,she%is@my*love "));
+            function isABC(charStr){
+                if(charStr>="a"&&charStr<="z"||charStr>="A"&&char<="Z"){
+                     return true;
+                }else{
+                    return false;
+                }
+            }
+                
+           function Countword(supstr,substr){
+               var arr=supstr.split(substr);
+               return arr.length-1;
+           }
+            alert(Countword("abcabcabcabcabcabc","abc"));
+
+
+            
+    </script>
+</body>
+</html>

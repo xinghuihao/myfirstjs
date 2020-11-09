@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>严格模式</title>
+    </head>
+    <body>
+    <script>
+       //严格模式 use strict
+       //[注] 严格模式不要写在全局；
+       //在全局变量中 使用严格模式注意
+       //    在全局变量，一定要加var
+       //    重名属性
+       //   arguements对象不会因动态改变而改变。
+       //   保留字  
+       //  implements interface; let package private  public static yield;
+
+        //    "use strict"
+        //    var interface = 10;
+        //       alert(interface);
+
+        function show (){
+            "use strict"
+               name=10;
+             
+        }
+             show ();
+             alert(name);
+         </script>
+</body>
+</html>

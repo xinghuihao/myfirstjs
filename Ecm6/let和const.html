@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     /*
+     let:块级作用域
+
+     let关键字声明变量， 作用域更小
+     注：let关键字声明变量；所形成的为块级作用域；
+
+     const:声明常量；
+    
+     */window.onload=function(){
+     var abtn=document.getElementsByTagName("button");
+     console.log(abtn);
+     for(let i=0;i<abtn.length;i++){
+        abtn[i].onclick=function(){
+            alert(i);
+        }
+     }
+    }
+    </script>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+</body>
+</html>

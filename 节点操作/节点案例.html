@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="tool.js"></script>
+    <style>
+        #div1{
+            width: 400px;
+            height: 100px;
+            background-color:orangered;
+        }
+        #div2{
+            width: 400px;
+            height: 500px;
+            background-color:palegoldenrod
+        }
+        input{
+            width: 380px;
+            height: 30px;
+            font-size: 18px;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            background-color:black;
+            color: white;
+        }
+        #div2 div button {
+             position: absolute;
+             right: 0;
+             width: 30px;
+             background-color: white;
+             color: black;
+           
+        }
+        #div2 div {
+            border-bottom: 1px dashed gray;
+            padding:2px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+   <script>
+       window.onload=function (){
+           var odiv1=document.getElementById("div1");
+           var odiv2=document.getElementById("div2");
+           var oInput=document.getElementById("input1");
+
+           var aBtn=odiv1.getElementsByTagName("button")
+          
+           aBtn[0].onclick=function(){
+            if(!oInput.value){
+               alert('用户名不能为空');
+            }else{
+                var newdiv=document.createElement("div");
+                var oText=document.createTextNode(oInput.value);
+                newdiv.appendChild(oText);
+                newdiv.style.backgroundColor=randomColor();
+                odiv2.appendChild(newdiv);
+                oInput.value='';
+            }
+           }
+           aBtn[1].onclick=function(){
+               var newnode=odiv2.lastChild.cloneNode(true);
+               odiv2.appendChild(newnode);
+           }
+           aBtn[2].onclick=function(){
+                 odiv2.removeChild(odiv2.lastChild);
+           }
+       }
+
+
+   </script>
+    <div id="div1">
+        <input type="text" value="请输入文本" id="input1">
+        <button>增加</button>
+        <button>拷贝</button>
+        <button>删除</button>
+    </div>
+    <div id="div2">
+        <div>xxx <button>x</button></div>
+        <div>xxx <button>x</button></div>
+        <div>xxx <button>x</button></div>
+    </div>
+</body>
+</html>

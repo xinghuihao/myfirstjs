@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>  
+        /*事件对象属性：
+        shiftkey:按下为true；
+        ctrlkey:
+        altkey:
+        matakey:           
+        */
+    window.onload=function (){
+        document.onkeydown=function(ev){
+           var e =ev ||window.event;
+          // alert(e);
+           var arr=[];
+           if(e.shiftKey){
+              arr.push("shift");
+           }
+           if(e.altKey){
+              arr.push("alt");
+           }
+           if(e.ctrlKey){
+              arr.push("ctrl")
+           }
+           if(e.metaKey){
+               arr.push("window");
+           }
+           alert(arr);
+        }
+    }
+            
+
+
+    </script>
+</body>
+</html>

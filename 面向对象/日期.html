@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        日期
+        没有传入的参数 按系统的默认时间
+        Tue Nov 03 2020 16:53:07 GMT+0800 (中国标准时间)
+         
+          国外月份0~1;
+
+        */
+    //    var d=new Date("2000-01-01");
+    //    var s=new Date("2000/01/01");
+    //    var q=new Date(2000,1,1,08,30,50);
+    //    alert(d);
+    //    alert(s);
+    //    alert(q);
+
+    var d= new Date();
+    //alert(d.toDateString());
+    //alert(d.toTimeString());
+
+    alert(d.toLocaleString())
+    alert(d.toLocaleTimeString())
+    alert(d.toLocaleDateString()+""+d.toLocaleTimeString());
+    </script>
+</body>
+</html>

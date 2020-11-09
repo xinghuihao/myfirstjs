@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+          /*
+          Array.from{}:将伪数组转化真数组；
+          */
+
+          /*
+          find()
+          功能：在数组中查找符合条件第一个元素，终止遍历；
+          返回值：找到元素；
+
+
+          copywithin
+
+
+
+          object.assign;
+           合并对象：
+           所有传入的对象，都合并到第一个对象；
+
+           浅拷贝；只拷贝地址；
+           深拷贝：将复合数据类型重新生成新的一份，进行拷贝；
+
+
+           集合 -set;
+                map;
+          */
+
+
+        window.onload=function(){
+           var ali=document.getElementsByTagName("li");
+           alert(ali.length);
+
+          var alis=Array.from(ali);
+           alis.push("hello");
+           alert(alis);
+        }
+
+        var arr=[10,20,30,40,50];
+        var ads=arr.copyWithin(2,3,4)
+        alert(arr);//10,20,40,40,50
+        var res=arr.find(function(item){
+            return item>20;
+        })
+        alert(res);
+    </script>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

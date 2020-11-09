@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css的样式</title>
+    <style>
+        #box{background-color: blue;}
+        .box{height:300px}
+        
+    </style>
+</head>
+<body>
+    <div id="box" style="width:200px; background-color: red;" class="box"></div>
+    <script>
+        var odiv =document.getElementById("box");
+        console.log(odiv);
+        // alert(odiv.style.height);
+
+        //alert(odiv.currentStyle['height']);
+        alert(getComputedStyle(odiv)['height']);
+          
+        alert(getstyle(odiv,"height"));
+      function getstyle(node,csstyle){
+           return node.currentStyle ? node.currentStyle[csstyle]:getComputedStyle(node)[csstyle];
+      }
+    </script>
+</body>
+</html>

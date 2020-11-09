@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="box">新增节点</button>
+    <ul id="aul">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+    <script>
+    
+   // var ali=oul.getElementsByTagName("li");
+  /*  for(var i=0;i<ali.length;i++){
+        ali[i].onclick=function(){
+            this.style.backgroundColor='red';
+        }
+    }
+    var btn=document.getElementById('box');
+    var i=5;
+     btn.onclick=function(){
+         var newnode=document.createElement('li');
+         newnode.innerText=i++*111;
+         oul.appendChild(newnode);
+
+     } */
+     window.onload=function(){
+        var oul=document.getElementById("aul");
+        oul.onclick=function(ev){
+          var e=ev||window.event;
+          var target=e.target||window.event.srcElement;
+         // alert(target.nodeName);
+           if(target.nodeName.toLowerCase()=="li"){
+              target.style.backgroundColor='red';
+            }
+        }
+        var btn=document.getElementById('box');
+        var i=5;
+        btn.onclick=function(){
+         var newnode=document.createElement('li');
+         newnode.innerText=i++*111;
+         oul.appendChild(newnode);
+        }
+     }
+
+     /*
+     事件委托：
+     A发布任务；
+     B执行任务；
+     */
+    /*
+    1，找到节点的父节点或者祖先节点；
+     2，将事件添加给父节点或者祖先节点；
+     3：找到触发对象，看到触发对象是否是想要的触发对象；
+    */
+    </script>
+</body>
+</html>

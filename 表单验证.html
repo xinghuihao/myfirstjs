@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单验证</title>
+    <style>
+     *{
+            margin: 0;
+            padding: 0;
+        }
+      
+      header{
+          width: 500px;
+          margin: 0 auto; 
+          height: 50px;
+          background-color: #0099FF;
+          color: white;
+          line-height: 50px;
+          text-align: center;
+      }
+      header span{
+          font-size: 22px;
+          margin-left: -10px;
+          font-family: "微软雅黑";
+      }
+      .main{
+          width: 500px;
+          margin: 0 auto;
+          background-color: #ccc;
+      }
+      .main-inner{
+           width: 100%;
+           margin: 0 auto;
+      }
+      .userForm{
+           width: 100%;
+           padding: 50px 0;
+      }
+      .userForm .usernamediv {
+          height: 38px;
+          line-height: 38px;
+          position: relative;
+      }
+       .userForm .usernamediv .label{
+           width: 85px;
+           float: left;
+           text-align: right;
+           font-size: 15px;
+           padding-right: 15px;
+       }
+       .main-inner .usernamediv .username {
+            width: 160px;
+       }
+       .Btn{
+           width: 300px;
+           margin-top: 30px;
+           /* margin-left: 100px;  */
+          
+       }
+       .btn1{
+           width: 54px;
+           height: 30px;
+           font-size: 12px;
+           background-color:#0099FF;
+           border: none;
+           border-radius: 3px;
+           color: cornsilk;
+           margin-left: 65px;
+       }
+       .btn2{
+           width: 54px;
+           height: 30px;
+           font-size: 12px;
+           background-color: cadetblue;
+           border: none;
+           border-radius: 3px;
+           color: cornsilk;
+           margin-right: 65px;
+           float: right;
+       }
+       .userForm .usernamediv #usernameError{
+           color: red;
+           font-size: 12px;
+       }
+       .userForm .usernamediv #userpwdError{
+           color: red;
+           font-size: 12px;
+       }
+       .userForm .testcode{
+           width: 50px;
+           height: 20px;
+           background-color: gray;
+           text-align: center;
+           line-height: 15px;
+           margin-left:40px;
+           float: left;
+       }
+
+    </style>
+</head>
+<body>
+    <header>
+            <span>登陆界面</span>
+        </header>
+        <section class="main">
+        <div class="main-inner">
+        <form class="userForm"action="" method="GET">
+        <div class="usernamediv">
+        <span class="label"> 用户名：</span>
+        <input type="text" id="username" name="username" class="username">
+        <span id="usernameError"></span>
+        </div>
+        <div class="usernamediv">
+        <span class="label"> 密码：</span>
+        <input type="text" class="username" id="pwd" name="userpwd">
+        <span id="userpwdError"></span>
+        </div>
+        <div class="testcode">弱</div>
+        <div class="testcode">中</div>
+        <div class="testcode">强</div>
+        <div class="Btn">
+            <input type="button" name="" value="登录" class="btn1">
+            <input type="button" name="" value="注册" class="btn2">
+        </div>
+    </form>
+    </div>
+    <script>
+        window.onload=function(){
+        var usernameElt=document.getElementById("username");
+        var usernameError=document.getElementById("usernameError");
+        
+       
+        usernameElt.onblur=function(){
+         var username=usernameElt.value;
+         var username=username.trim();
+
+         if(username.length<6||username.length>18){
+            usernameError.innerText="!用户名必须要在6~18字符";
+         }else if(!/[a-zA-Z]/.test(username[0])){
+            usernameError.innerText="!用户名首字母必须是字符";
+         }else if(/\W/.test(username)){
+            usernameError.innerText="!用户名必须是字母，数字下划线构成";
+         }else {
+            usernameError.innerText="用户名可注册";
+         }
+        }
+        
+    }
+
+
+    </script>
+</body>
+</html>

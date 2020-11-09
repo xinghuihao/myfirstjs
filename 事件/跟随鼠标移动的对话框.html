@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            font-size: 30px;
+            width: 130px;
+            display: block;
+            margin: 100px;
+        }
+        #box{
+            height: 150px;
+            width: 600px;
+            background-color: gray;
+            color: white;
+            display: none;
+            position: absolute;
+        }
+ 
+
+    </style>
+    <script>
+        var arr=["李世民，陇西狄道（今甘肃省临洮县）人。唐朝第二位皇帝（626—649年在位），政治家、战略家、军事家、诗人。","武则天，并州文水（今山西文水）人。唐朝至武周时期政治家，武周开国君主（690年－705年在位），也是中国历史上唯一的正统女皇帝、即位年龄最大（67岁）及寿命最长的皇帝之一（82岁）。","唐玄宗李隆基，唐高宗李治与武则天之孙，唐睿宗李旦第三子，故又称李三郎，母窦德妃。   先天元年（712年）至天宝十五载（756年）在位。因安史之乱退位为太上皇，是唐朝在位最长的皇帝，亦是唐朝极盛时期的皇帝。","唐高宗李治（628年7月21日 [1-2]  -683年12月27日 [3]  ），字为善，唐朝第三位皇帝（649年7月15日-683年12月27日在位），唐太宗李世民第九子，母为文德顺圣皇后长孙氏，太子李承乾、魏王李泰同母弟"];
+       window.onload=function(){
+        //    var div1=document.getElementById('div1');
+           var aAa=document.getElementsByTagName('a');
+           var  div=document.getElementById('box');
+           
+           for(var i=0;i<aAa.length;i++){
+              aAa[i].index=i;
+              aAa[i].onmouseover=function(){
+                //   alert(this.index);
+                  div.innerHTML=arr[this.index];
+                  div.style.display='block';
+              }
+              aAa[i].onmouseout=function(){
+                  div.style.display='none';
+             }
+              
+               aAa[i].onmousemove=function(ev){
+                    var e=ev||window.event;
+                    div.style.left=e.clientX+5+"px";
+                    div.style.top=e.clientY+5+"px";
+               }
+           }
+
+       }
+    </script>
+</head>
+<body>
+
+    <a href="">唐太宗</a>
+    <a href="">武则天</a>
+    <a href="">唐玄宗</a>
+    <a href="">唐高宗</a>
+     <div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>four</title>
+</head>
+<body>
+<script>
+    var x=-1;
+    if(x<1){
+        y=x;
+        alert("输出的值"+y);
+    }else if(x>=1 && x<10){
+        y=2*x+1;
+        alert("输出的值"+y);
+    }else if(x>=10){
+        y=5*x-17;
+        alert("输出的值"+y);
+    }
+
+    var score =75;
+    if(score>85){
+        alert("优秀");
+    }else if(score>=75&&score<=85){
+        alert("良好"); 
+    }else if(score>60&&score<75){
+       alert("及格");
+    }
+    else{
+        alert("不及格");
+    }
+
+    var grade ="B";
+    switch (grade) {
+        case "A":
+            alert("80~100");
+            break;
+        case "B":
+             alert("70~80");
+             break;
+        case "C":
+             alert("60~70");
+             break; 
+        case "D":
+             alert("<60");
+             break;     
+        default:
+             alert("erro")
+             break;
+    }
+
+        var num=90;
+        num%2 == 0 ? alert("偶数"):("奇数"); //三目运算符
+
+        var month=5;
+        var year=2008;
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+            alert("31")
+                break;
+            case 2:
+                if( year%4==0 && year%100!=0 ||year/400==0){
+                    alert("28")
+                }else{
+                    alert("29");
+                }
+                break;          
+         default:
+                alert("30");
+                break;
+        }
+
+</script>
+</body>
+</html>

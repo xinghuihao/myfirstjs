@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="tool.js"></script>
+    <style>
+         #div1{
+             margin: 100px auto;
+             width: 600px;
+             height: 100px;
+             border: 1px solid #000;
+             font-size: 30px;
+             line-height: 90px;
+             text-align: center;
+         }
+    </style>
+    
+</head>
+<body>
+    
+    <script>
+      
+         
+       setInterval(function(){
+          //if(i==5){
+           // clearInterval(timer);
+        var div=document.getElementById("div1");
+          div.innerHTML= show();
+          
+        },1000);
+
+     /*   function show(){
+    var d =new Date();
+    var year =d.getFullYear();
+    var month = d.getMonth()+1;
+    var day = d.getDate();
+
+    var week=numofchinese(d.getDay());
+    var hour=d.getHours();
+    var min=d.getMinutes();
+    var sec=d.getSeconds();
+
+    var str =year +"年"+month+"月"+day+"日"+"星期"+week+hour+"时"+min+"分"+sec+"秒";
+    return str;
+}
+ function numofchinese(n){
+     var arr=["日","一","二","三","四","五","六"];
+     return arr[n];
+ } 
+  function doublechinese(n){
+      if(n<10){
+       return "0"+n;
+      }
+  }
+*/
+    </script>
+    <div id="div1">显示当前时间</div>
+</body>
+</html>

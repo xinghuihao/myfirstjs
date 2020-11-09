@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件冒泡</title>
+    <style>
+        div{
+            padding: 15px;
+        }
+      #div1{ width: 300px;height: 100px;background-color:tomato;margin: 100px auto;}
+      #div2{width: 200px; height: 70px;background-color: blue; margin:  auto; }
+      #div3{width:100px;height: 50px;background-color: darkgreen; margin: auto;}   
+    </style>
+</head>
+<body>
+     <div id="div1"><div id="div2"><div id="div3"></div></div></div>
+      
+    <script>
+
+
+        /*
+        浏览器事件：冒泡
+        事件冒泡：有里向内；
+        事件捕获：由外向里；
+
+        组织事件冒泡：
+        cancelBublle=true;
+        */
+        window.onload=function(){
+            var adiv=document.getElementsByTagName('div');
+            console.log(adiv);
+            for(var i=0;i<adiv.length;i++){
+
+                adiv[i].onclick=function(ev){
+                    var e=ev||window.event
+                    alert(this.id);
+                    stopBublle(e);
+            }
+          }
+          function stopBublle(e){
+              e.stopBublle ? e.stopBublle():e.cancelBubble=true;
+          }
+        }
+        
+    </script>
+</body>
+</html>

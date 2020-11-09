@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>集合</title>
+</head>
+<body>
+    <script>
+        /*
+         集合: 无序，不重复
+           -set;
+            Map;
+
+            集合遍历
+            for of  遍历集合；
+        */
+      let imgs=new Set();
+
+      imgs.add(100);
+      imgs.add(100);
+      imgs.add("hello");
+      imgs.add("hello");
+      imgs.add(true);
+
+      imgs.add(new String("world"));
+      imgs.add(new String("world"));
+
+     // console.log(imgs);
+
+      for (let item of imgs.keys()){
+        // console.log(item);
+      }
+
+      for (let item of imgs.values()){
+        // console.log(item);
+      }
+
+      for (let item of imgs.entries()){
+        // console.log(item);
+      }
+
+      //数组变集合
+      var set=new Set([10,20,30,40,20,50,60]);
+       console.log(set);
+      //集合变数组
+      var arr=[...set];
+      console.log(arr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>style样式</title>
+    <script src="tool.js"></script>
+    <style>
+         
+        #box{
+            width: 300px;
+            height: 200px;
+            border:1px solid black;
+            margin:100px auto;
+            text-align: center;
+            line-height: 180px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+     <div id="box">div文本</div>
+     <script>
+    function randomColor(){
+     var str ="rgba("+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+parseInt(Math.random()*256+","+1);
+       return str;
+    } 
+    alert(randomColor());
+    var speed=5;
+    var counnt=0;
+    var ali=document.getElementById("box");
+    window.onload=function(){
+       
+        console.log(ali);
+
+        setInterval(function(){
+            ali.style.color=randomColor();
+            var odv=parseInt(getstyle(ali,'fontSize'));
+            ali.style.fontSize=(odv+speed)+'px';
+
+            counnt++;
+            if(counnt%6==0){
+              speed *=-1;
+            }
+        },1000);
+      
+       
+      
+
+    }
+     </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选项卡</title>
+    <style>
+      #div1  button{
+            width: 100px; 
+            height: 30px;
+            background-color: gray; 
+            color: white; 
+            font-size: 18px
+        }
+        #div1 .active{
+           background-color: chartreuse;
+            color: blue;
+        }
+        #div1 div{
+            width: 340px; 
+            height: 300px; 
+            border: 1px solid black; 
+            display: none
+            }
+    </style>
+</head>
+<body>
+    <div id="div1">
+    <button class="active">html5</button>
+    <button>java</button>
+    <button>php</button>
+     <div style="display: block;">HTML5是构建Web内容的一种语言描述方式。HTML5是互联网的下一代标准，是构建以及呈现互联网内容的一种语言方式．被认为是互联网的核心技术之一。</div>
+     <div>Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。</div>
+     <div>PHP即“超文本预处理器”，是一种通用开源脚本语言。PHP是在服务器端执行的脚本语言，与C语言类似，是常用的网站编程语言。PHP独特的语法混合了C、Java、Perl以及 PHP 自创的语法。利于学习，使用广泛，主要适用于Web开发领域。</div>
+     
+    </div>
+    <script>
+       window.onload=function (){
+           var odiv1=document.getElementById("div1");
+           console.log(odiv1);
+           var btn=odiv1.getElementsByTagName("button");
+           console.log(btn)
+           var odivs=odiv1.getElementsByTagName("div");
+           console.log(odivs);
+           for(var i=0;i<btn.length;i++){
+               //指定所选下标
+               btn[i].index=i;
+               btn[i].onclick=function(){
+                   //取消所选的样式
+                   for(var j=0;j<btn.length;j++){
+                     btn[j].className='';
+                     odivs[j].style.display='none';
+                   }
+                   //
+                   this.className='active';
+                   odivs[this.index].style.display='block';  
+               }
+           }
+       }
+
+    </script>
+</body>
+</html>

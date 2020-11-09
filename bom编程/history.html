@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+<body>
+     
+<script>
+/*
+    history:历史记录；
+    属性:
+    history.length;历史记录；
+    方法：
+    history.back();
+    history.forward();
+    history.go();
+        0:刷新当前页面
+        n:前进和退出n条记录；
+        
+*/
+     function btn(){
+         window.open("http://www.baidu.com","xxx");
+     }
+</script>
+  <button onclick="btn()">打开百度</button>
+  <button onclick='alert(history.length)'>获取历史记录</button>
+  <button onclick='history.back();'>后退</button>
+  <button onclick='history.forward()'>前进</button>
+  <button onclick='history.go(0)'>go</button>
+</body>
+</html>

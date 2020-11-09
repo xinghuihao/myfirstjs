@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!--
+         arguements:是函数内置；
+         是一个函数内部的参数；
+
+    -->
+             
+     <script>
+        //  function show(){
+        //      alert(arguments.length);
+        //      alert(arguments[1])
+        //  }
+        // show(1,true,"hello",undefined);
+
+
+    //     function sum(){
+    //         var res=0;
+    //     for(var i=0;i<arguments.length;i++){
+    //          res += arguments[i];
+    //     }
+    //       return res
+    //     }
+    //    var num= sum(1,2,3,4);
+    //    alert(num);
+ 
+    //函数作用域
+         var a=10; var b=20;//全局变量
+         function show(){
+             var b=100;//局部变量；
+             a+=5;
+            alert(a+','+b)
+            }
+             show();
+            alert(a);
+             alert(a+','+b)
+    //函数递归
+           function rabbit(n){
+               if(n<4){
+                   return 1;
+               }
+             return rabbit(n-1)+rabbit(n-3);
+           }
+          alert(rabbit(8));
+    //
+          function peach(n){
+              if(n==1){
+                  return 1;
+              }
+            return (peach(n-1)+1)*2;
+          }
+         alert(peach(5));
+     </script>
+</body>
+</html>
