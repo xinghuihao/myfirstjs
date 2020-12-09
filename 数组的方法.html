@@ -15,15 +15,16 @@
 //             document.write(arr[i] + "&nbsp");
 //         }
 
-
+     //push:从末尾插入元素，返回值为元素的个数
     //  var arr=["北京","上海","天津"];
     //  var res =arr.push("成都","杭州","南京");
-   
     //  alert (arr);
     //  alert (res);
 
-     //var arr2=["唐朝","宋朝","明朝"]
-     //var res=arr2.pop();
+    //pop:末尾出，返回值为扣掉的元素
+
+    //  var arr2=["唐朝","宋朝","明朝"]
+    // var res=arr2.pop();
     //  alert(arr2);
     //  alert(res);
 
@@ -35,22 +36,24 @@
      //队列结构
      //从末尾进
      //从头部出
-    // var arr1=["唐朝","宋朝","明朝"]
-    //  var res2=arr1.shift();//
+    //  var arr1=["唐朝","宋朝","明朝"]
+    //  var res2=arr1.shift();
     //  alert(arr1);
     //  alert(res2);
+    //如果数组是空的，那么 shift() 方法将不进行任何操作，返回 undefined 值。请注意，该方法不创建新数组，而是直接修改原有的
+
 
      //数组的方法
       // concat 拷贝原数组，合并新数组
     // var arr3=["lol","cf"];
-    // var newarr=arr1.concat("hello",arr3);
+    // var newarr=arr3.concat("hello",arr3);
     // alert(newarr);
     // alert(newarr.length);
     // alert(arr3);
 
-   // var arr = [10,20,30,40,50]
-   // var res = arr.slice(1,4); slice:截取数中的字符
-//    var res =arr.splice(2,0,"hello","world"); //
+     var arr = [10,20,30,40,50]
+     var res = arr.slice(1,4); //slice:截取数中的字符
+     var res =arr.splice(2,0,"hello","world"); //
     // splice:增加 删除 修改  返回值为截取下来元素作为返回值。
     //    var res =arr.splice(1,0,"hello")//("hello","world");   删除
     //    alert(res);

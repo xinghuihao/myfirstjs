@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+    继承(原型链继承)
+     封装(封装构造函数)  多态
+
+
+    在子一级重写函数，只会在子一级生效
+    继承和多态是子一级，不同的侧重；
+    继承：从父一级构造函数，继承到的属性和方法；
+    多态：侧重的是子一级重写的属性方法；
+
+    面向对象是一种思想，支撑面向对象的语法是类和对象，构造函数充当类的角色；
+    构造函数和对象实现面向的时候；
+    */
+      function person({name,sex,age}){
+         this.name=name;
+          this.sex=sex;
+          this.age=age;
+      }
+      person.prototype.show=function (){
+          alert(`这是我的名字${this.name},我今年是${this.age}的${this.sex}性,穿的是${this.color}`);
+      }
+    //   var p1=new person("orange","男","18")
+    //   p1.show();
+
+      function panda({name,sex,age,color}){
+        person.call(this,{
+            name:name,
+            sex:sex,
+            age:age
+        })
+          this.color=color;
+      }
+
+        // panda.prototype=person.prototype;
+
+       for(var funarr in person.prototype){
+        panda.prototype[funarr]=person.prototype[funarr];
+        }
+
+       panda.prototype.showColor=function(){
+           alert(this.color);
+      }
+
+      var xiaoni =new panda({
+         name:"小明",
+         sex:"男",
+         age:18,
+         color:"红色"
+      })
+      xiaoni.showColor();
+
+      var xiaohei=new panda({
+          name:"小黑",
+          sex:"女",
+          age:16
+      })
+      
+
+
+      // alert(xiaoni.name);
+      // alert(xiaoni.sex);
+      // alert(xiaoni.age);
+     
+       xiaoni.show();
+      xiaohei.showColor();
+      // alert(xiaohei.showColor);
+     // alert(xiaoni.showColor);
+</script>
+</body>
+</html>

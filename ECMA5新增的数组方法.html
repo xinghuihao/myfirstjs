@@ -16,10 +16,11 @@
           功能：数组从一个查起；出现的第一元素；
           返回值：-1；没有查到 >=0;数据的位置；
      */
-    //   var arr=[10,20,30,40,50];
+    //   var arr=[10,20,30,40,50,40,30,20,10];
     //   var num =arr.indexOf(50);
-    //   alert(num);
-    //document.write()
+    //   var num1=arr.indexOf(40,3);
+    //   alert(num1);
+          
 
 
      /*数据遍历
@@ -29,25 +30,24 @@
      */
           
 
-        /*   var arr=[10,20,30,40,50];
+           //var arr=[10,20,30,40,50];
 
-          for(var i=0;i<arr.length;i++){
-             document.write(arr[i]+","+i+"</br>")
-          } 
-        arr.forEach(function(item,index,arr){
+        //   for(var i=0;i<arr.length;i++){
+        //      document.write(arr[i]+","+i+"</br>")
+        //   } 
+          //arr.forEach(function(item,index,arr){
            
-           item:数据
-           index：下标；
+          // item:数据
+           //index：下标；
            
       
-          document.write(item+","+index+"</br>");
-        });                   */
+          //document.write(item+","+index+"</br>");
+        //});                 
 
         /*map:遍历当前数组，调用参数方法，返回当前方法地返回值*/
         // var arr=[10,20,30,40,50];  
         // var newarr=arr.map(function(item){
-        //     return item*3;
-            
+        //     return item*3;  
         // });
         // document.write(newarr);
         
@@ -58,22 +58,22 @@
         //some：某些 返回值true
         //短路操作；只要找到一个符合，就停止；
 
-        //every：元素查找每一符合元素的值，有的话就返回true
+        //every：元素查找每一符合元素的值，有的话就返回true；
         //没有就返回false；
-        /*var arr=[10,20,30,40,50];  
+        var arr=[10,20,30,40,50];  
         var newarr=arr.every(function(item){
             alert(item);
             return item<100;
         });
            alert(newarr);
-                                 */
-        //reduce:归并
-        var arr=[10,20,30,40,50];  
-        var newarr=arr.reduce(function(prev,next,index,arr){
-            alert(prev+","+next);
-            return prev+next;
-        });
-           alert(newarr);
+                                 
+       // reduce:归并
+        // var arr=[10,20,30,40,50];  
+        // var newarr=arr.reduce(function(prev,next,index,arr){
+        //     alert(prev+","+next);
+        //     return prev+next;
+        // });
+        //    alert(newarr);
 
     </script>
 </body>

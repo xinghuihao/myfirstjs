@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class语法</title>
+</head>
+<body>
+    <script>
+    //     function Person(name,sex,age){
+    //       this.name=name;
+    //       this.sex=sex;
+    //       this.age=age
+    //   }
+    //   Person.prototype.show=function (){
+    //       alert(`这是我的名字${this.name},我今年是${this.age}的${this.sex}性`);
+    //   }
+
+
+      class person{
+          constructor(name,sex,age){
+              this.name=name;
+              this.sex=sex;
+              this.age=age;
+          }
+          show(){
+            alert(`这是我的名字${this.name},我今年是${this.age}的${this.sex}性`);
+          }
+      }
+         var p1=new person("blue","男",15);
+         p1.show();      
+
+        //继承
+         class worker extends person{
+            constructor(name,sex,age,job){
+                //继承父一级的属性；
+                super(name,sex,age);
+                this.job=job;
+            }
+            showjob(){
+            alert("我的工作是"+this.job);
+            }
+         }
+        var p1=new worker("blur","男","22","程序员");
+        p1.show();
+        p1.showjob();
+        //白领人
+    /*    function worker(name,sex,age,job){
+            //构造函数的伪装 --继承父级属性；
+            Person.call(this,name,sex,age);
+              this.job=job;
+        }
+
+        原型链，继承父一级
+        1：通过for in 遍历；
+        for(var funcname in person.pototype){
+            worker.prototype[funcname]=person.prototype[funcname]
+        }
+        2：object.create();
+            worker.prototype=object.create(person.prototype)
+        3: 调用构造函数的继承；
+
+        worker.prototype=new Person();
+        worker.prototype.showjob=function(){
+            alert("我的工作是"+this.job);
+        }
+
+        var p1=new worker("blur","男","20","程序员");
+        p1.show();
+        p1.showjob();   */
+    </script>
+</body>
+</html>

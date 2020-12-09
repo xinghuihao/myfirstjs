@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+<body>
+    <button id='btn'>发送请求</button>
+    <script>
+     /*
+     ajax 异步的javascript和xml;
+
+     ajax 前后端交互的搬运工；异步执行；
+
+     xml数据传输格式；(大型的门户网站)
+     优点：种类丰富传输量大
+     缺点：不太适合轻量级数据
+     
+     json的数据格式：
+     轻量级
+     解析轻松
+     缺点：
+      种类小；
+     数据量小；
+
+    JSON.parse();
+    JSON.stringify();
+
+
+    任何一个程序都是由一个个小程序执行而成
+    同步：阻塞：必须等前一个程序执行完，才可执行
+    异步：非阻塞 当前程序执行，与其他程序没有任何关系；
+     */
+    window.onload=function(){
+        var oBtn=document.getElementById('btn');
+        oBtn.onclick=function (){
+            //1，创建Ajax对象
+            //ajaxIE8一下不兼容
+            //IE8以下
+            //使用ActiveXObject("Microsoft.XMLHTTP");
+           // var xhr =XMLHttpRequest();
+           /*
+           调用get
+           第一个参数：请求方式；
+           第二个参数：url;
+           第三个参数：是否异步；true:同步；
+                               false:异步；
+           */
+            var xhr=0;
+            try {
+               xhr=XMLHttpRequest;
+
+               //throw new error();
+            } catch (error) {
+                xhr=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            /*
+            try{
+
+            }catch(erro){
+
+            }
+             先去执行try中代码
+             如果try中代码执行正常，就不用执行catch代码
+             如果try中代码执行异常，执行catch代码补救；
+             注：多用于后期代码调试，
+            */
+
+           xhr.open('get',"1.txt",true);
+            //调用send方法；
+           xhr.send();
+
+           
+           //等待数据回应
+           /*
+           readystatechange 事件类型
+           xhr.readyState 发生变化时候调用
+           0 使用open方法之前
+           1 调用send方法之前
+           2，send方法完成之后，发送请求
+           3，正在解析下载到的数据；
+           4，解析完成；
+           
+           
+           */
+           xhr.onreadyStatechange=function(){
+               if(readyState==4){
+                   alert(xhr.responseText);
+               }
+           }
+
+        }
+    }
+        /*
+        action 点击submit以后跳转到url;
+        method 表单提交数据方式
+          get(默认)
+           
+          提交方式：直接将数据拼接到url后面进行提交，通过？拼接，查询字符串
+          好处：简单
+          缺点：
+               1，不安全
+               2，最大2kb
+               3,没法实现上传；
+
+        post:
+        提交方式：post提交通过浏览器内部进行提交；
+        好处：1，安全
+              2，理论上没有上限；
+              3，
+        缺点：1复杂
+        */
+
+         /*
+          post提交数据，需要通过send方法提交；
+            ?namel=value&name2=value2   seach
+            name=value&name2=value2      querstring
+
+
+         */
+
+
+    </script>
+</body>
+</html>

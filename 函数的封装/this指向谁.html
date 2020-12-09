@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        this指向当前函数的主人；
+        this 混乱的部分
+         1：事件绑定
+         2，定时器        
+        */
+        
+        function AAas(){
+            this.a=10;
+            var obtn=document.getElementById("btn");
+            // var _this=this;
+            // obtn.onclick=function(){
+            //      _this.show();
+            // }
+            // obtn.onclick=this.show.bind(this);
+         setTimeout(this.show.bind(this),4000);
+            // setTimeout(function(){
+            //     _this.show();
+            // },4000)
+        }
+        AAas.prototype.show=function(){
+            alert(this.a);
+        }
+        window.onload=function(){
+        var a1=new AAas();
+        a1.show();
+        }
+
+    </script>
+    <button id="btn">按钮</button>
+</body>
+</html>

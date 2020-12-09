@@ -96,6 +96,17 @@
            margin-left:40px;
            float: left;
        }
+       .Btn{
+           position: relative;
+       }
+       #btn1{
+           width: 100px;
+           height: 30px;
+           background-color:cadetblue;
+           text-align: center;
+           line-height: 18px;
+           position:absolute;
+       }
 
     </style>
 </head>
@@ -114,14 +125,16 @@
         <div class="usernamediv">
         <span class="label"> 密码：</span>
         <input type="text" class="username" id="pwd" name="userpwd">
+        <span id="userpwd1Error"></span>
         <span id="userpwdError"></span>
         </div>
+        <div id="div1">
         <div class="testcode">弱</div>
         <div class="testcode">中</div>
         <div class="testcode">强</div>
+        </div>
         <div class="Btn">
-            <input type="button" name="" value="登录" class="btn1">
-            <input type="button" name="" value="注册" class="btn2">
+            <input type="submit" name="" value="登录" id="btn1">
         </div>
     </form>
     </div>
@@ -130,7 +143,9 @@
         var usernameElt=document.getElementById("username");
         var usernameError=document.getElementById("usernameError");
         
-       
+        var userpassword=document.getElementById("pwd");
+        var odiv1=document.getElementById('div1');
+        var Odiv=odiv1.getElementsByClassName('testcode');
         usernameElt.onblur=function(){
          var username=usernameElt.value;
          var username=username.trim();
@@ -143,9 +158,29 @@
             usernameError.innerText="!用户名必须是字母，数字下划线构成";
          }else {
             usernameError.innerText="用户名可注册";
+            usernameError.style.color='green'
          }
         }
-        
+        userpassword.onkeyup=function(){
+            var Value=this.value;
+            for(var i=0;i<Odiv.length;i++){
+            Odiv[i].style.backgroundColor='gray';
+            }
+            if(Value.length>=6){
+              if(/^\d+$/.test(Value)||/^[a-z]+$/.test(Value)||/^[A-Z]+$/.test(Value)){
+               Odiv[0].style.backgroundColor='orange'
+              }else if(/\d/.test(Value)&&/[a-z]/.test(Value)&&/[A-Z]/.test(Value)){
+                Odiv[2].style.backgroundColor='orange'
+              }else{
+                Odiv[1].style.backgroundColor='orange'
+              }
+            }
+        }
+            var submitbtn=document.getElementById('btn1');
+              submitbtn.onclick=function(){
+                usernameElt.focus();
+                usernameElt.blur();
+              }
     }
 
 

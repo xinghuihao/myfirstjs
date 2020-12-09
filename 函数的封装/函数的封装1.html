@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的封装</title>
+</head>
+<body>
+    <script>
+        /*
+        工厂模式
+        原料
+        加工
+        产品
+        
+
+        我们某一个函数用new创建
+        一，当前函数的this指向新创建的对象。
+        二，自动完成原料一和原料三的过程；
+
+        通过new调用的函数，成为构造函数，构造函数可以构造对象；
+        注：构造函数一般首字母大写；
+        */
+    /*   function creatperson(name,sex){
+           //原料
+         // var obj=new Object();
+          
+          //加工
+          this.name=name;
+          this.sex=sex;
+
+          this.showName=function(){
+             alert(`我的名字是${name}`);
+          }
+           this.showSex=function(){
+               alert(`我的性别是${sex}的`);
+           }
+           //产品
+           //return obj;
+       }
+       // var p1=creatperson("张三","男");
+        //p1.showName();
+        //p1.showSex();
+
+        var p1=new creatperson("张三","女")
+        p1.showName();
+        p1.showSex();*/
+
+        function creatperson(name,sex){
+            this.name=name;
+            this.sex=sex;
+        }
+        creatperson.prototype.showName=function(){
+            alert("我的名字是"+this.name);
+        }
+        creatperson.prototype.showSex=function(){
+            alert("我的性别是"+this.sex);
+        }
+        
+        var p1=new creatperson("张三","女")
+        p1.showName();
+        p1.showSex();
+
+        var p1=new creatperson("李四","男")
+        p1.showName();
+        p1.showSex();
+    </script>
+</body>
+</html>

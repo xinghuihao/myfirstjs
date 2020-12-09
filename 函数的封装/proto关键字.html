@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_proto_</title>
+</head>
+<body>
+    <script>
+        /*
+        构造函数的构造的对象，有一个属性__proto__,指向构造的函数的原型；
+        
+         instanceof 关键字；
+         功能：判断某一个对象是否是构造函数构造出来的；
+        */
+
+       
+      function person({name,sex,age}){
+          this.name=name;
+          this.sex=sex;
+          this.age=age
+      }
+      person.prototype.show=function (){
+          alert(`这是我的名字${this.name},我今年是${this.age}的${this.sex}性`);
+      }
+    
+      var xiaoni =new person({
+         name:"小明",
+         sex:"男",
+         age:18,
+         color:"red"
+      });
+          xiaoni.show();
+          alert(xiaoni.__proto__==person.prototype);
+          alert(xiaoni instanceof Object);
+      var xiaohei=new person({
+          name:"小黑",
+          sex:"女",
+          age:16
+      });
+       xiaohei.show();
+         alert(xiaohei.__proto__ == person.prototype);
+  
+         alert(xiaoni.__proto__==xiaohei.__proto__);
+    </script>
+</body>
+</html>

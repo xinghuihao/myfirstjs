@@ -11,19 +11,20 @@
     for(var i=0;i<arr.length;i++){
         arr[i]=i*2+2;
     }
-   //alert(arr);
+        alert(arr);
      var average =[];
      for(var i=0; i<6;i++){
          var newArr=arr.splice(0,5);
          alert(newArr);
-          var sum=0;
-       for(j=0;j<newArr.length;j++){
-             sum +=newArr[j];
+    //splice() 方法用于添加或删除数组中的元素。
+    //返回值为该数组的元素
+        var sum=0;
+        for(j=0;j<newArr.length;j++){
+        sum +=newArr[j];
        }
-          average.push(sum/5);
-      } 
-       alert(average);
-       
+        average.push(sum/5);
+       } 
+       alert(average);   
     </script>
 </body>
 </html>

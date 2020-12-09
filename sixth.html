@@ -18,7 +18,7 @@
         // var i=0;
         // while(i<100){
         //     if(i%2==0){
-        //       document.write(i +"&nbsp");
+        //       document.write(i +"&nbsp"+"<br/>");
         //     }
         //     i++;
         // }
@@ -52,7 +52,7 @@
         //  while(i<100){
         //      if(i%2==0){
         //          sum=sum - 1/i;   
-        //      } else{
+        //      }else{
         //          sum=sum+ 1/i
         //      }  
         //   i++;
@@ -67,7 +67,7 @@
         // }
         //  alert(sum);
 
-        // var num= 100;
+        // var num= 101;
         // var isYes=false;
         // for(i=2;i<num;i++){
         //     if(num%i==0){
@@ -86,66 +86,68 @@
     //         var b = parseInt(i/10)%10;
     //         var c = parseInt(i/100);
     //         var sum = Math.pow(a,3)+Math.pow(b,3)+Math.pow(c,3);
-        
+    //     //math.pow；计算x的y次方;
+         
+
     //     if(sum==i){
     //        document.write(sum +"&nbsp");
     //        document.write("<br/>")
     //     }
     // }
-        //    for(i=10000;i<100000;i++){
-        //        var a =i % 10;
-        //        var b =parseInt(i/10)%10;
-        //        var c =parseInt(i/1000)%10;
-        //        var d =parseInt(i/10000);
+           for(i=10000;i<100000;i++){
+               var a =i % 10;
+               var b =parseInt(i/10)%10;
+               var c =parseInt(i/1000)%10;
+               var d =parseInt(i/10000);
            
-        //        if(a==d && b==c){
-        //          document.write(i +"</br>");
+               if(a==d && b==c){
+                 document.write(i +"</br>");
 
-        //     }
-        // }
-
-        var year=1998;
-        var month =2;
-        var day =3;
-        var sum=0;
-        switch (month) {
-            case 12:
-              sum =sum+30;
-            case 11:
-            sum =day+31;
-            case 10:
-            sum =sum+30;
-            case 9:
-                sum +sum+31;
-            case 8:
-                sum=sum+31;
-            case 7:
-                sum =sum+30;
-            case 6:
-                sum =sum+31;
-            case 5:
-                sum =sum+30;
-            case 4:
-                sum=sum+31;
-            case 3:
-                sum=sum+28;
-                if(year%4==0 && year%100!=0 || year%400==0){
-                   sum=sum+1;
-                }
-            case 2:
-                sum=sum +31;
-            case 1:
-                sum = day+sum;
-                break;
-            default:
-                alert("error");
-                break;
+            }
         }
-        alert("今年的第"+sum+"天");
 
-        var week=parseInt(sum/7);
-        var date=(sum%7);
-        alert("今年的第"+week+"周的"+date+"天");
+    //     var year=1998;
+    //     var month =2;
+    //     var day =3;
+    //     var sum=0;
+    //     switch (month){
+    //         case 12:
+    //           sum =sum+30;
+    //         case 11:
+    //         sum =day+31;
+    //         case 10:
+    //         sum =sum+30;
+    //         case 9:
+    //             sum =sum+31;
+    //         case 8:
+    //             sum=sum+31;
+    //         case 7:
+    //             sum =sum+30;
+    //         case 6:
+    //             sum =sum+31;
+    //         case 5:
+    //             sum =sum+30;
+    //         case 4:
+    //             sum=sum+31;
+    //         case 3:
+    //             sum=sum+28;
+    //             if(year%4==0 && year%100!=0 || year%400==0){
+    //                sum=sum+1;
+    //             }
+    //         case 2:
+    //             sum=sum +31;
+    //         case 1:
+    //             sum = day+sum;
+    //             break;
+    //         default:
+    //             alert("error");
+    //             break;
+    //     }
+    //     alert("今年的第"+sum+"天");
+
+    //     var week=parseInt(sum/7);
+    //     var date=(sum%7);
+    //     alert("今年的第"+week+"周的"+date+"天");
      </script>
 
 

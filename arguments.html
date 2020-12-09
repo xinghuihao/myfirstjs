@@ -30,32 +30,32 @@
     //    var num= sum(1,2,3,4);
     //    alert(num);
  
-    //函数作用域
+    // //函数作用域
          var a=10; var b=20;//全局变量
          function show(){
              var b=100;//局部变量；
              a+=5;
-            alert(a+','+b)
+            //alert(a+','+b)
             }
              show();
-            alert(a);
+             alert(a);
              alert(a+','+b)
     //函数递归
-           function rabbit(n){
-               if(n<4){
-                   return 1;
-               }
-             return rabbit(n-1)+rabbit(n-3);
-           }
-          alert(rabbit(8));
-    //
-          function peach(n){
-              if(n==1){
-                  return 1;
-              }
-            return (peach(n-1)+1)*2;
-          }
-         alert(peach(5));
+        //    function rabbit(n){
+        //        if(n<4){
+        //            return 1;
+        //        }
+        //      return rabbit(n-1)+rabbit(n-3);
+        //    }
+        //   alert(rabbit(8));
+    
+        //   function peach(n){
+        //       if(n==1){
+        //           return 1;
+        //       }
+        //     return (peach(n-1)+1)*2;
+        //   }
+        //  alert(peach(5));
      </script>
 </body>
 </html>
